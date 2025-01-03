@@ -31,7 +31,29 @@ This requires [Python](https://www.python.org/) v3.8+ and [Django](https://www.d
   pip install -r requirements.txt
 ```
 
-Install the dependencies and start the server.
+### Add your database name (change settings.py file)
+
+```bash
+  DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'newemp', # add you database name (schema name eg: newemp)
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '3306'
+    }
+  }
+```
+
+### Update your database (By Applying migrations)
+
+```bash
+python manage.py migrate
+```
+
+### Install the dependencies and start the server.
 
 ```bash
   python manage.py runserver
